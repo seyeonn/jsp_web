@@ -14,7 +14,7 @@
 <body>
 
   <div class="container">
-    <% request.setCharacterEncoding("utf-8"); %>  //꺼낼 데이터가 한글이라면 선언해주어야 한다.
+    <% request.setCharacterEncoding("utf-8"); %>
 
     <h1>request parameter</h1>    
     <table>
