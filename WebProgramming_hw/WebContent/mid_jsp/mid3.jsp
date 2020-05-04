@@ -13,7 +13,7 @@ button {
 	padding: 0.4em 2em;
 }
 
-input {
+select {
 	margin-top: 10px;
 }
 </style>
@@ -33,9 +33,13 @@ if (number == null) {
       <label><input type="radio" name="radio1" value="one" <%= one %>/>one</label>
       <label><input type="radio" name="radio1" value="two" <%= two %>/>two</label>
       <label><input type="radio" name="radio1" value="three" <%= three %>/>three</label>
-		<div>
-			<input type="text" value='<%=number%>' />
-		</div>
+	  <div>
+			<select name="number">
+				<option value="one" <%="one".equals(number) ? "selected" : ""%>>one</option>
+				<option value="two" <%="two".equals(number) ? "selected" : ""%>>two</option>
+				<option value="three" <%="three".equals(number) ? "selected" : ""%>>three</option>
+			</select>
+	   </div>
 		<div>
 			<button type="submit">Ok</button>
 		</div>
