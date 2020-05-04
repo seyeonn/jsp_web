@@ -21,11 +21,10 @@ if (request.getMethod().equals("POST")) {
 <script src="https://kit.fontawesome.com/68abb170e0.js" crossorigin="anonymous"></script>
 <style>
   body { font-family: 굴림체; font-size: 10pt; }
-  div.container { width: 400px; margin: 20px auto; }
+  div.container {margin: 20px; }
   form div { margin-bottom: 20px; }
   label { display: block; }   
   input.text { width: 200px; padding: 5px; }
-  select { width: 150px; padding: 5px; }
   .btn { padding: 0.7em 2em; border: 1px solid #aaa;
          background: linear-gradient(#eee, #ddd); color: black;       
          font-family: 굴림체; font-size: 10pt; line-height: 1em;   
@@ -46,12 +45,10 @@ td {
 <body>
 <%
 String checked = request.getParameter("radio1");
-String 남자 = "one".equals(checked) ? "checked" : "";
-String 여자 = "two".equals(checked) ? "checked" : "";
-String three = "three".equals(checked) ? "checked" : "";
+String 남자 = "남자".equals(checked) ? "checked" : "";
+String 여자 = "여자".equals(checked) ? "checked" : "";
 %>
 <div class="container">
-
 <form method="post">
   <h1>회원 등록</h1>
   <div>
@@ -60,11 +57,16 @@ String three = "three".equals(checked) ? "checked" : "";
   </div>
   <div>
   <label>성별</label>
-  <label><input type="radio" name="radio1" value="남자" "<%= 남자 %>"/>남자</label>
-  <label><input type="radio" name="radio1" value="여자" "<%= 여자 %>"/>여자</label>
+  <label><input type="radio" name="radio1" value="남자" <%= 남자 %>/>남자</label>
+  <label><input type="radio" name="radio1" value="여자" <%= 여자 %>/>여자</label>
   </div>
   <button type="submit" class="btn"> 회원 등록 </button>
 </form>
+<% if (에러메시지 != null) { %>
+  <div class="error">
+    회원가입 실패: <%= 에러메시지 %>
+  </div>
+<% } %>
 <br>
 <br>
 <table>
@@ -78,11 +80,6 @@ String three = "three".equals(checked) ? "checked" : "";
   </tr>
 </table>
 
-<% if (에러메시지 != null) { %>
-  <div class="error">
-    회원가입 실패: <%= 에러메시지 %>
-  </div>
-<% } %>
 </div>
 </body>
 </html>

@@ -12,8 +12,18 @@ table {
 td {
 	padding: 5px;
 	border: solid 1px gray;
-	width: 100px;
+	width: 130px;
 }
+
+button {
+	padding: 0.4em 2em;
+}
+
+input {
+	width: 130px;
+	height: 20px;
+}
+
 </style>
 </head>
 <body>
