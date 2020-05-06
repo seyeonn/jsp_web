@@ -18,6 +18,7 @@ public class BookDAO {
         book.setCategoryId(resultSet.getInt("categoryId"));
         book.setPrice(resultSet.getInt("price"));
         book.setPublisher(resultSet.getString("publisher"));
+        book.setCategoryName(resultSet.getString("categoryName"));
         return book;
     }
 
@@ -34,13 +35,13 @@ public class BookDAO {
         }
     }
 
-    public static List<Book> findByName(String title) throws Exception {
+    public static List<Book> findByName(String author) throws Exception {
         String sql = "SELECT b.*, c.categoryName " +
-                     "FROM book b LEFT JOIN ategory c ON b.categoryId = c.id " +
-                     "WHERE b.title LIKE ?";
+                     "FROM book b LEFT JOIN category c ON b.categoryId = c.id " +
+                     "WHERE b.author LIKE ?";
         try (Connection connection = DB.getConnection("book");
              PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, title + "%");
+            statement.setString(1, author + "%");
             try (ResultSet resultSet = statement.executeQuery()) {
                 ArrayList<Book> list = new ArrayList<Book>();
                 while (resultSet.next())
