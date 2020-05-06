@@ -7,6 +7,7 @@ public class Book {
 	int categoryId;
 	int price;
 	String publisher;
+	String categoryName;
 
 	public int getId() {
 		return id;
@@ -24,7 +25,7 @@ public class Book {
 		this.title = title;
 	}
 
-	public String getauthor() {
+	public String getAuthor() {
 		return author;
 	}
 
@@ -56,4 +57,11 @@ public class Book {
 		this.publisher = publisher;
 	}
 
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
 }
