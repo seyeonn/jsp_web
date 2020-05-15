@@ -46,6 +46,7 @@ Student student = StudentDAO5.findById(id);
   </tr>
 </table>
 
+<a href="javascript:window.history.back()" class="btn btn-info">돌아가기</a>
 </div>
 </body>
 </html>
