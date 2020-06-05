@@ -5,15 +5,15 @@ select { padding: 5px; }
 
 div.container { width: 700px; margin: 20px auto; font-size: 11pt; }
 
-.btn { padding: 0.7em 1.5em; border: 1px solid #aaa; border-radius: 4px;common.css">
-       background: linear-gradient(#fff, #ddd); color: black;common.css">
-       font-family: 굴림체; font-size: 10pt; line-height: 1em;common.css">
+.btn { padding: 0.7em 1.5em; border: 1px solid #aaa; border-radius: 4px;
+       background: linear-gradient(#fff, #ddd); color: black;
+       font-family: 굴림체; font-size: 10pt; line-height: 1em;
        text-decoration: none; cursor: pointer; display: inline-block; }
 .btn:active {
       -ms-transform: translateY(2px);
       -webkit-transform: translateY(2px);
       transform: translateY(2px);
-      background: #ccc;  }common.css">
+      background: #ccc;  }
 .btn.small { padding: 0.4em 1em; }
 
 .align-right { text-align: right; }
@@ -24,7 +24,7 @@ div.error { margin-top: 20px; padding: 10px 20px; background-color: #fdd; border
 
 table.table { border-collapse: collapse; width: 100%; }
 table.table thead th { background-color: #eee; }
-table.table tr.clickable:hover td { background-color: #ffa; cursor: pointer; }
+table.table tr.clickable:hover { background-color: #ffa; cursor: pointer; }
 table.table th, table.table td { border: 1px solid gray; padding: 4px; }
 
 .shadow { box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.4); }
