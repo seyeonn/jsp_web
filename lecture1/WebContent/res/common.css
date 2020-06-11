@@ -29,3 +29,8 @@ table.table th, table.table td { border: 1px solid gray; padding: 4px; }
 
 .shadow { box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.4); }
 
+table.pagination { border-collapse: collapse; margin-top: 20px; }
+table.pagination td { text-align: center; border: 1px solid #aaa; }
+table.pagination a { text-decoration: none; display: inline-block; padding: 5px 10px; color: #06C; }   
+table.pagination td.active { background-color: #06C; }
+table.pagination td.active a { color: white; }
