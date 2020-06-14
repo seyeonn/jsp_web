@@ -6,7 +6,7 @@
 <%
 String errorMessage = null;
 if (request.getMethod().equals("POST")) {
-    errorMessage = StudentService5.validateBeforeInsert(student);
+    errorMessage = StudentService5.validate(student);
     if (errorMessage == null) {
         session.setAttribute("student", student);
         response.sendRedirect("studentCreate_success.jsp");
