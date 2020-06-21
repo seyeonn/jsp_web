@@ -3,6 +3,8 @@ package lecture1.jdbc5;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import javax.servlet.http.HttpSession;
+
 import lecture1.utils.StringUtil;
 
 public class UserService {
@@ -11,7 +13,6 @@ public class UserService {
     static final String 사용자ID_필수 = "사용자ID를 입력하세요";
     static final String 사용자ID_중복 = "사용자ID가 중복됩니다";
     static final String 작업_실패 = "작업 도중 오류가 발생했습니다";
-
 
     public static String validate(User user) throws Exception {
         if (StringUtil.isEmptyOrBlank(user.getUserid()))
@@ -58,6 +59,21 @@ public class UserService {
             e.printStackTrace(System.err);
             return 작업_실패;
         }
+    }
+
+    public static boolean login(HttpSession session, String userid, String password) throws Exception {
+        User user = UserDAO.findByUserid(userid);
+        if (user == null) return false;
+        String encryptedPassword = encrypt(password);
+        if (user.getPassword().equals(encryptedPassword)) {
+            session.setAttribute("USER",  user);
+            return true;
+        }
+        return false;
+    }
+
+    public static void logout(HttpSession session) {
+        session.removeAttribute("USER");
     }
 
     public static String encrypt(String passwd) throws NoSuchAlgorithmException {

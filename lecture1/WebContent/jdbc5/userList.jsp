@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List, lecture1.jdbc5.*" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="my" %>
+<%@ include file="checkLogin.jsp" %>
 <%
 String pg = request.getParameter("pg");
 int currentPage = (pg == null) ? 1 : Integer.parseInt(pg);

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*, lecture1.jdbc5.*" %>
+<%@ include file="checkLogin.jsp" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="user" class="lecture1.jdbc5.User" />
 <jsp:setProperty property="*" name="user" />

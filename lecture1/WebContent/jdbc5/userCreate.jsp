@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*, lecture1.jdbc5.*" %>
+<%@ include file="checkLogin.jsp" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="user" class="lecture1.jdbc5.User" />
 <jsp:setProperty property="*" name="user" />
@@ -11,7 +12,7 @@ if (request.getMethod().equals("POST")) {
     errorMessage = UserService.insert(user);
     if (errorMessage == null) {
         int recordCount = UserDAO.count();
-        int lastPage = (int)Math.ceil(recordCount / 15.0);
+        int lastPage = (int)Math.ceil(recordCount / 15.0); 
         response.sendRedirect("userList.jsp?pg=" + lastPage);
         return;
     }
@@ -67,13 +68,13 @@ List<Department> departments = DepartmentDAO.findAll();
   </div>
   <div>
     <label>활성화</label>
-    <input type="checkbox" name="enabled" value="true" ${ user.enabled ? "checked" : "" } />
+    <input type="checkbox" name="enabled" value="true" ${ user.enabled ? "checked" : "" } /> 
   </div>
   <div>
     <label>유형</label>
     <select name="userType" required>
       <option value="">사용자 유형을 선택하세요</option>
-      <option value="학생" ${ user.userType == "학생" ? "selected" : "" }>학생</option>
+      <option value="학생" ${ user.userType == "학생" ? "selected" : "" }>학생</option>      
       <option value="교수" ${ user.userType == "교수" ? "selected" : "" }>교수</option>
       <option value="관리자" ${ user.userType == "관리자" ? "selected" : "" }>관리자</option>
     </select>
